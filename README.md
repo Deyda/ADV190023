@@ -54,7 +54,7 @@ This script reads the previously created CSV file if it is not older than 15 min
 
 ### What tasks does the script perform?
 - Get-ADDomain queries the container of the domain controller and searches for computer objects in it
-- Each domain controller is checked for availability and for event 2887 in the Directory Service Event Log
+- Each domain controller is checked for availability and for event 2887 and 3040 in the Directory Service Event Log
 - If the domain controller is reachable and the event was found, it is checked if it is reachable via remote management
 - If the domain controller is accessible:
   - The size of the **Directory Service** event log is read and written to a variable
