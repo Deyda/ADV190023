@@ -1,8 +1,18 @@
 <#
-Author:			Arne Tiedemann infoWAN Datenkommunikation GmbH
-E-Mail:			Arne.Tiedemann@infowan.de
-Date:			2019-11-14
-Description:
+.SYNOPSIS
+This script checks all domain controller concerning Event ID 2887 & 3040 (LDAP Clear Text/Unsigned)
+
+.DESCRIPTION
+This script checks all domain controllers of the domain via Get-WinEvent and searches for the event with the 
+ID 2887 in the Directory Service Event Log. If this script finds domain controllers where the event occurs, a 
+CSV file is created in the directory ~\Documents and after checking all domain controllers a table is displayed in the shell.
+
+.NOTES
+  Version:          1.0
+  Author:           Arne Tiedemann
+  Rewrite Author:   Manuel Winkel <www.deyda.net>
+  Creation Date:    2020-03-04
+  Purpose/Change:   Extension by event id 3040 
 #>
 ###########################################################################
 # Variables
