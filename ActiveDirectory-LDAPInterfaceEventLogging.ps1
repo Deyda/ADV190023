@@ -1,8 +1,18 @@
 <#
-Author:			Arne Tiedemann infoWAN Datenkommunikation GmbH
-E-Mail:			Arne.Tiedemann@infowan.de
-Date:			2019-11-14
-Description:
+.SYNOPSIS
+This script create a detailed CSV List of the Systems
+
+.DESCRIPTION
+This script reads the previously created CSV file if it is not older than 15 minutes. If the file is older, 
+the check is automatically repeated and the CSV file is rewritten. The CSV file is read and every domain 
+controller that has at least one event (ID 2887 or 3040) is activated for LDAP logging
+
+.NOTES
+  Version:          1.0
+  Author:           Arne Tiedemann
+  Rewrite Author:   Manuel Winkel <www.deyda.net>
+  Creation Date:    2020-03-04
+  Purpose/Change:   
 #>
 Param(
     $Runtime = 30
