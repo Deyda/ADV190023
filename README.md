@@ -36,7 +36,7 @@ The GPO configures the following areas:
 ### Setup Group Policy
 To configure Group Policy, create a new blank policy on the domain controller container and import the policy settings from the directory located in the GPO directory. When you have successfully completed the import and enabled the policy, wait two hours to enable the policies on all domain controllers. If you have multiple sites, policy activation may take longer.
 
-# Start-LDAP_Interface_Event_Logging.ps1
+# ActiveDirectory-LDAPInterfaceEventLogging.ps1
 ## Usage
 To execute the script, start an **Administrative** PowerShell and change to the directory where you have saved the script.
 The script can be started without parameters!
@@ -44,13 +44,13 @@ The script can be started without parameters!
 
 Run the script in Standard mode
 Here the logging for each domain controller is activated for 30 minutes!
-<code> .\Start-LDAPInterfaceEventLogging.ps1</code>
+<code> .\ActiveDirectory-LDAPInterfaceEventLogging.ps1</code>
 
 Version with specification of the running time in minutes
-<code> .\Start-LDAPInterfaceEventLogging.ps1 -Runtime "Minuten"</code>
+<code> .\ActiveDirectory-LDAPInterfaceEventLogging.ps1 -Runtime "Minuten"</code>
 
 ## Evaluation of simple and unsigned LDAP bindings of the domain controllers
-This script reads the previously created CSV file if it is not older than 15 minutes. If the file is older, the check is automatically repeated and the CSV file is rewritten. The CSV file is read and every domain controller that has at least one event (ID 2887) is activated for LDAP logging.
+This script reads the previously created CSV file if it is not older than 15 minutes. If the file is older, the check is automatically repeated and the CSV file is rewritten. The CSV file is read and every domain controller that has at least one event (ID 2887 & 3040) is activated for LDAP logging.
 
 ### What tasks does the script perform?
 - Get-ADDomain queries the container of the domain controller and searches for computer objects in it
