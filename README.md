@@ -1,6 +1,6 @@
 # Collection of Scripts for ADV190023
 
-Here the describes the scripts from atiedemann that make it easier for an administrator of an Active Directory domain to find out if their own domain is affected.
+Here the describes the scripts from [atiedemann](https://github.com/atiedemann) that make it easier for an administrator of an Active Directory domain to find out if their own domain is affected.
 
 The following is deposited for this purpose:
 
