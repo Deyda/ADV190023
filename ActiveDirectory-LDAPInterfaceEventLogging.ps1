@@ -12,7 +12,7 @@ controller that has at least one event (ID 2887 or 3040) is activated for LDAP l
   Author:           Arne Tiedemann
   Rewrite Author:   Manuel Winkel <www.deyda.net>
   Creation Date:    2020-03-04
-  Purpose/Change:   
+  Purpose/Change:   Update for Event ID 3040
 #>
 Param(
     $Runtime = 30
