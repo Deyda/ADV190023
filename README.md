@@ -4,7 +4,7 @@ Here the describes the scripts from [atiedemann](https://github.com/atiedemann) 
 
 The following is deposited for this purpose:
 
-1. **PowerShell Script**: Check-DC_LDAP_Events.ps1
+1. **PowerShell Script**: ActiveDirectory-DCLDAPEvents.ps1
 2. **GPO**: Group policy for the configuration of the remote management of systems (domain controllers)
 3. **PowerShell Script**: Start-LDAP_Interface_Event_Logging.ps1
 
@@ -16,7 +16,7 @@ For best results, run the scripts on a system that meets these requirements.
 - FireWall configuration for remote access must be configured! This is also configured by the above mentioned GPO.
 - Membership in the group Domain Admins
 
-# Check-DC_LDAP_Events.ps1
+# ActiveDirectory-DCLDAPEvents.ps1
 This script checks all domain controllers of the domain via Get-WinEvent and searches for the event with the ID 2887 in the Directory Service Event Log. If this script finds domain controllers where the event occurs, a CSV file is created in the directory ~\Documents and after checking all domain controllers a table is displayed in the shell.
 
 Header of the CSV File:
