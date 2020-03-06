@@ -89,6 +89,33 @@ if ((Test-Path -Path $PathLDAPCount -ErrorAction SilentlyContinue) -and
                 } catch {
                     Write-Warning $_.Exception.Message
                 }
+                                try {
+                    Write-Host 'Getting Events 3040 from DC: ' -NoNewline
+                    Write-Host $DC -ForegroundColor Green -NoNewline
+
+                    # Grab the appropriate event entries
+                    $Events = Get-WinEvent -ComputerName $DC -FilterHashtable @{Logname='Directory Service';Id=3040; StartTime=(Get-Date).AddHours(-24)} -ErrorAction SilentlyContinue
+
+                    if ($Events.Count -gt 0) {
+
+                        # Loop through each event and output the
+                        ForEach ($Event in $Events) {
+                            $eventXML = [xml]$Event.ToXml()
+
+                            # Build Our Values
+                            $Count = ($eventXML.event.EventData.Data[0])
+                        }
+
+                        # Add new line to Arraylist
+                        $InsecureLDAPCount += [pscustomobject]@{
+                            DomainController = $DC
+                            Count = $Count
+                        }
+                    }
+                    Write-Host ' Done...' -ForegroundColor Yellow
+                } catch {
+                    Write-Warning $_.Exception.Message
+                }
             }
         }
     }
